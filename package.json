@@ -1,0 +1,7 @@
+{
+  "name": "wav_to_mp3",
+  "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
+    "fluent-ffmpeg": "^2.1.2"
+  }
+}
