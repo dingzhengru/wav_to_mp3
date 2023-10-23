@@ -25,7 +25,6 @@ function convertWavToMp3(wavFilename) {
         resolve(outputFile);
       })
       .save(outputFile);
-    console.log(outputFile);
   });
 }
 
@@ -33,12 +32,9 @@ const main = async () => {
   const fullPath = path.join(__dirname, 'source');
   const fileList = await fs.readdirSync(fullPath);
 
-  fileList.forEach(item => {
-    convertWavToMp3(path.join(fullPath, item));
+  fileList.forEach(async item => {
+    const res = await convertWavToMp3(path.join(fullPath, item));
+    console.log(res);
   });
-
-  setTimeout(() => {
-    process.exit();
-  }, 3000);
 };
 main();
